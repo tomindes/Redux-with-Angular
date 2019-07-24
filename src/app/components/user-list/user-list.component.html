@@ -1,0 +1,11 @@
+<div *ngIf="!store.user.loading">
+  <div *ngFor="let user of store.user.filteredUsers">
+      <h3 class="user-card">
+        <a routerLink="/user-info/{{user.id}}" routerLinkActive="active">{{ user.lastName }}</a>
+      </h3>
+    </div>
+</div>
+
+<div *ngIf="store.user.loading">
+  <h3 style="text-align: center">Loading...</h3>
+</div>

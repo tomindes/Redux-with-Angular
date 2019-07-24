@@ -1,1 +1,237 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 2vh 10vw;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,.03);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    height: calc(95vh - 40px);
+    color: rgba(12, 12, 12, 0.87);
+}
+
+.user-card {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    width: 93%;
+    margin-left: 1%;
+}
+
+.user-card a, .back, .edit {
+    text-decoration: none;
+    background-color: #3f51b5;
+    color: white;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    padding: 0 16px;
+    line-height: 36px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.back {
+    float: right;
+    margin-bottom: 15px;
+}
+
+.edit {
+    float: left;
+    background-color: #4CAF50
+}
+
+.search-input, .edit-input {
+    font: inherit;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit;
+    border-bottom: 1px solid;
+}
+
+.edit-input {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.count {
+    color: #fff;
+    background: #f44336;
+    display: inline-block;
+    border-radius: 30%;
+    text-align: center;
+    position: absolute;
+    right: 12vw;
+    padding: 10px;
+}
+
+user-list {
+    display: inline-block;
+    overflow: auto;
+    height: calc(95vh - 142px);
+    width: 100%;
+}
+
+
+
+
+.card {
+    position: relative;
+    padding: 20px 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+    overflow: hidden;
+    text-align: center;
+    z-index: 5
+}
+
+.card:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 130px;
+    top: 0;
+    background: #f9f9f9;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    z-index: -1
+}
+
+.card .user_photo {
+    position: relative;
+    background: #fff;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,.25)
+}
+
+.card .user_photo img {
+    width: 150px;
+    border-radius: 50%
+}
+
+.card .user_photo .refresh {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    padding: 10px 15px;
+    color: #fff;
+    background: rgba(0,0,0,.75);
+    border-radius: 3px;
+    text-decoration: none;
+    opacity: 0;
+    display: block;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out
+}
+
+.card .user_photo:hover .refresh {
+    bottom: -20px;
+    opacity: 1
+}
+
+.card #user_title {
+    color: #999;
+    font-size: 18px;
+    margin: 0
+}
+
+.card #user_value {
+    color: #2c2e31;
+    font-size: 38px;
+    margin: 5px;
+    text-transform: capitalize
+}
+
+.values_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left
+}
+
+.values_list li {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 48px;
+    float: left;
+    margin: 20px;
+    background-size: 378px;
+    background-position-y: -48px;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out
+}
+
+.values_list li:before {
+    content: attr(data-label);
+    opacity: 0
+}
+
+.values_list li.active[data-label=name] {
+    background-position: 0 -96px
+}
+
+.values_list li.active[data-label=email] {
+    background-position: -68px -96px
+}
+
+.values_list li.active[data-label=birthday] {
+    background-position: -135px -96px
+}
+
+.values_list li.active[data-label=location] {
+    background-position: -203px -96px
+}
+
+.values_list li.active[data-label=phone] {
+    background-position: -270px -96px
+}
+
+.values_list li.active[data-label=pass] {
+    background-position: -338px -96px
+}
+
+.values_list li[data-label=name] {
+    background-position: 0 -48px
+}
+
+.values_list li[data-label=email] {
+    background-position: -68px -48px
+}
+
+.values_list li[data-label=birthday] {
+    background-position: -135px -48px
+}
+
+.values_list li[data-label=location] {
+    background-position: -203px -48px
+}
+
+.values_list li[data-label=phone] {
+    background-position: -270px -48px
+}
+
+.values_list li[data-label=pass] {
+    background-position: -338px -48px
+}
+
+a:active,a:hover {
+    outline: 0
+}

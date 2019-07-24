@@ -1,0 +1,24 @@
+<a class="edit" (click)="edit()">
+    {{ store.mode.editMode ? "Save" : "Edit" }}
+</a>
+<a class="back" routerLink="/users" routerLinkActive="active">Back</a>
+
+
+<div class="card">
+    <div class="details">
+        <div class="user_photo horizontal_center" id="user_photo">
+            <img src="{{user.picture}}">
+        </div>
+        <p id="user_title">First Name</p>
+        <p *ngIf="!store.mode.editMode" id="user_value" style="text-transform: lowercase;">{{ user.firstName }}</p>
+        <input class="edit-input" *ngIf="store.mode.editMode" [(ngModel)]="user.firstName">
+
+        <p id="user_title">Last Name</p>
+        <p *ngIf="!store.mode.editMode" id="user_value" style="text-transform: lowercase;">{{ user.lastName }}</p>
+        <input class="edit-input" *ngIf="store.mode.editMode" [(ngModel)]="user.lastName">
+
+        <p id="user_title">Email</p>
+        <p *ngIf="!store.mode.editMode" id="user_value" style="text-transform: lowercase;">{{ user.email }}</p>
+        <input class="edit-input" *ngIf="store.mode.editMode" [(ngModel)]="user.email">
+    </div>
+</div>
